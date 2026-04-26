@@ -73,12 +73,13 @@ export function LyricsSyncPage({ onBack }: LyricsSyncPageProps) {
       }
 
       const playerDiv = document.createElement('div');
-      playerDiv.id = `sync-player-${Date.now()}`;
       containerRef.current.innerHTML = '';
       containerRef.current.appendChild(playerDiv);
 
-      playerRef.current = new window.YT.Player(playerDiv.id, {
+      playerRef.current = new window.YT.Player(playerDiv, {
         videoId,
+        width: '100%',
+        height: '100%',
         playerVars: {
           autoplay: 0,
           rel: 0,
